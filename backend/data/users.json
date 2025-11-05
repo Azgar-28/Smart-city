@@ -1,0 +1,22 @@
+[
+  {
+    "id": "u1",
+    "username": "admin",
+    "password": "adminpass",
+    "role": "admin"
+  },
+  {
+    "id": "d4orwDn_",
+    "username": "qweasd",
+    "password": "zxcv",
+    "role": "user",
+    "token": "_vW4OrDi_Our81L3"
+  },
+  {
+    "id": "Vi95Qr_N",
+    "username": "azgar",
+    "password": "123",
+    "role": "user",
+    "token": "9IOK5N-_93WDjx0D"
+  }
+]

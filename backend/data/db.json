@@ -1,0 +1,111 @@
+{
+  "cities": [
+    {
+      "id": "c1",
+      "name": "Mumbai",
+      "population": 20411000,
+      "services": [
+        "Transport",
+        "Health",
+        "Waste Management",
+        "Water Supply",
+        "Public Safety"
+      ],
+      "amenities": [
+        "Beaches",
+        "Museums",
+        "Public Gardens"
+      ]
+    },
+    {
+      "id": "c2",
+      "name": "Delhi",
+      "population": 16787941,
+      "services": [
+        "Transport",
+        "Health",
+        "Electricity",
+        "Sewer",
+        "Emergency Services"
+      ],
+      "amenities": [
+        "Monuments",
+        "Parks",
+        "Cultural Centers"
+      ]
+    },
+    {
+      "id": "c3",
+      "name": "Bengaluru",
+      "population": 8443675,
+      "services": [
+        "Transport",
+        "IT Services",
+        "Waste Management",
+        "Public Lighting"
+      ],
+      "amenities": [
+        "Tech Parks",
+        "Botanical Gardens",
+        "Startup Hubs"
+      ]
+    },
+    {
+      "id": "c4",
+      "name": "Chennai",
+      "population": 7090000,
+      "services": [
+        "Port Authority",
+        "Transport",
+        "Health",
+        "Water Supply"
+      ],
+      "amenities": [
+        "Marina Beach",
+        "Temples",
+        "Cultural Centers"
+      ]
+    },
+    {
+      "id": "c5",
+      "name": "Kolkata",
+      "population": 4496694,
+      "services": [
+        "Transport",
+        "Public Safety",
+        "Waste Management",
+        "Electricity"
+      ],
+      "amenities": [
+        "Heritage Walks",
+        "Museums",
+        "Parks"
+      ]
+    },
+    {
+      "id": "c6",
+      "name": "Hyderabad",
+      "population": 6809970,
+      "services": [
+        "Transport",
+        "IT Services",
+        "Water Supply",
+        "Health"
+      ],
+      "amenities": [
+        "Lakes",
+        "Historic Sites",
+        "Tech Parks"
+      ]
+    }
+  ],
+  "reports": [
+    {
+      "id": "lsKpiEmy",
+      "reporter": "sw",
+      "city": "delhi",
+      "issue": "poor",
+      "createdAt": "2025-11-05T03:12:26.853Z"
+    }
+  ]
+}
