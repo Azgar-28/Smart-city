@@ -58,6 +58,12 @@ app.post('/api/reports', (req, res)=> {
   res.status(201).json(report);
 });
 
+// return all reports
+app.get('/api/reports', (req, res) => {
+  const db = readDB();
+  res.json(db.reports || []);
+});
+
 // Simple auth: register and login (development/demo only; passwords stored in plain text)
 app.post('/api/auth/register', (req, res)=>{
   const payload = req.body || {};

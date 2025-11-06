@@ -13,7 +13,7 @@ export default function Register({onRegistered}){
       alert('Registered — you can now login');
     }catch(err){ setError(err.message || 'Registration failed'); }
   }
-  return (
+  return ( 
     <form className="form" onSubmit={submit} style={{maxWidth:420, margin:'0 auto'}}>
       <h3>Register</h3>
       <div style={{marginTop:8}}> 

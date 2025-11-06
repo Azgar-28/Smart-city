@@ -4,19 +4,25 @@ import ReportForm from './components/ReportForm';
 import Login from './components/Login';
 import Register from './components/Register';
 import AdminDashboard from './components/AdminDashboard';
-import {getCities, submitReport} from './services/api';
+import {getCities, submitReport, getReports} from './services/api';
+import ReportsList from './components/ReportsList';
 import './App.css';
 
 export default function App(){
   const [cities, setCities] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [reports, setReports] = useState([]);
   const [page, setPage] = useState('login'); // home|login|register|admin
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
   const [token, setToken] = useState(() => localStorage.getItem('token') || null);
   const [role, setRole] = useState(() => localStorage.getItem('role') || null);
   
   useEffect(()=> {
-    getCities().then(setCities).catch(err => console.error(err)).finally(()=>setLoading(false));
+    // load cities and reports
+    Promise.all([getCities(), getReports()])
+      .then(([citiesRes, reportsRes]) => { setCities(citiesRes); setReports(reportsRes); })
+      .catch(err => console.error(err))
+      .finally(()=>setLoading(false));
   }, []);
 
   useEffect(()=>{
@@ -32,8 +38,15 @@ export default function App(){
   },[]);
   
   async function handleReport(data){
-    await submitReport(data);
-    alert('Report submitted — thank you!');
+    try{
+      const saved = await submitReport(data);
+      // append locally to avoid refetch
+      setReports(r => [saved, ...r]);
+      alert('Report submitted — thank you!');
+    }catch(err){
+      console.error(err);
+      alert('Failed to submit report');
+    }
   }
   
   function handleLogin(t, r){
@@ -80,6 +93,10 @@ export default function App(){
             <CityList cities={cities} />
           )}
         </>
+      )}
+
+      {page==='home' && (
+        <ReportsList reports={reports} />
       )}
 
       {page==='login' && <Login onLogin={handleLogin} />}

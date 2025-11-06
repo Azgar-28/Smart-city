@@ -16,6 +16,12 @@ export async function submitReport(payload){
   return res.json();
 }
 
+export async function getReports(){
+  const res = await fetch(`${API_BASE}/api/reports`);
+  if(!res.ok) throw new Error('Failed to fetch reports');
+  return res.json();
+}
+
 export async function registerUser(payload){
   const res = await fetch(`${API_BASE}/api/auth/register`, {
     method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(payload)
